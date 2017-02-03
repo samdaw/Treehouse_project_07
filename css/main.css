@@ -1,0 +1,136 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 300;
+  color: #666666;
+  margin: 0;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1080px;
+  padding-bottom: 100px;
+}
+
+.wrapper video {
+  width: 100%;
+}
+
+#video-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.orange,
+#video-transcript span:hover {
+  color: #ff9900;
+}
+
+#video-transcript {
+  width: 96%;
+  margin: 1.5em auto;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.all-video-controls {
+  position: absolute;
+  width: 100%;
+  bottom: 4px;
+  transform: translateY(50px);
+  transition: ease all .4s;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+#video-container:hover .all-video-controls,
+#video-container:hover #video-controls {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+#video-controls {
+  display: flex;
+  opacity: 0;
+  transition: ease all .4s;
+  width: 98%;
+  margin: 0 auto;
+}
+
+#video-controls button {
+  display: inline-block;
+  margin: 20px 10px;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  outline-color: transparent;
+  outline-style: none;
+}
+
+#volume-bar {
+  width: 100px;
+  align-self: center;
+}
+
+#current-time,
+#duration-time {
+  align-self: center;
+  margin-left: 10px;
+  color: #fff;
+  font-size: 14px; 
+}
+
+#duration-time {
+  margin-right: auto;
+}
+
+progress[value] {
+  cursor: pointer;
+  width: 100%;
+  height: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.16);
+  position: absolute;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+progress[value]::-moz-progress-bar {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+#progress-bar {
+  z-index: 2;
+}
+
+#progress-bar::-webkit-progress-bar {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#progress-bar::-moz-progress-bar {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#progress-bar::-moz-progress-bar {
+  background-color: #ff9900;
+}
+#progress-bar::-webkit-progress-value {
+  background-color: #ff9900;
+}
+#buffer-bar::-moz-progress-value {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#buffer-bar::-webkit-progress-value {
+  background-color: rgba(255, 255, 255, 0.5);
+}

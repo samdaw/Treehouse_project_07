@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Video Player</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+<body>
+	<div class="wrapper">
+		<div id="video-container">
+			<video id="video-player" controls preload="auto">
+			  	<source src="media/video.mp4" type="video/mp4">
+           		<source src="media/video.ogg" type="video/ogg">
+			</video>
+			<div class="all-video-controls">
+				<progress id="progress-bar" max="100" value="0"></progress>
+				<progress id="buffer-bar" max="100" value="0"></progress>
+				<div id="video-controls">
+					<button type="button" id="play-pause" class="play"><img src="img/play-icon.png" alt="Play button"/></button>
+					<span id="current-time">00:00</span><span id="duration-time">00:59</span>
+					<button type="button" id="mute"><img src="img/volume-on-icon.png" alt="Mute button"/></button>
+					<input type="range" id="volume-bar" min="0" max="1" step="0.01" value="1">
+					<button type="button" id="full-screen"><img src="img/fullscreen-icon.png" alt="Full Screen" /></button>
+				</div>
+			</div>
+		</div>
+		<div id="video-transcript"></div>
+	</div>
+	<script src="js/app.js"></script>
+</body>
+</html>
