@@ -1,6 +1,5 @@
 const video = document.querySelector('video');
-const videoPlayer = document.getElementById('video-player')
-videoPlayer.controls = false;
+video.controls = false;
 const progressBar = document.getElementById('progress-bar');
 const bufferBar = document.getElementById('buffer-bar');
 const playButton = document.getElementById('play-pause');
@@ -70,14 +69,11 @@ prep_transcript();
 
 video.addEventListener('loadedmetadata', () => duration.innerHTML = format_time(video.duration));
 
-progressBar.addEventListener('click', function(e) {
-   let pos = (e.pageX  - (this.offsetLeft + this.offsetParent.offsetLeft)) / this.offsetWidth;
-   video.currentTime = pos * video.duration;
-});
+const videoProgress = (clickTime) => video.currentTime = clickTime / 100 * video.duration;
 
-progressBar.addEventListener('change', () => {
-	let time = video.duration * (progressBar.value / 100);
-	video.currentTime = time;
+progressBar.addEventListener('click', function(e) {
+  let clickTime = Math.round(e.offsetX / this.offsetWidth * 100);
+  videoProgress(clickTime);
 });
 
 video.addEventListener('timeupdate', () => {
